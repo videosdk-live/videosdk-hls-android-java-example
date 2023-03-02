@@ -51,14 +51,14 @@ import org.json.JSONObject;
 
 import java.util.Map;
 
-import live.videosdk.android.hlsdemo.common.activity.CreateOrJoinActivity;
-import live.videosdk.android.hlsdemo.common.activity.MainActivity;
-import live.videosdk.android.hlsdemo.common.NetworkUtils;
+import live.videosdk.android.hlsdemo.common.meeting.activity.CreateOrJoinActivity;
+import live.videosdk.android.hlsdemo.common.meeting.activity.MainActivity;
+import live.videosdk.android.hlsdemo.common.utils.NetworkUtils;
 import live.videosdk.android.hlsdemo.R;
-import live.videosdk.android.hlsdemo.common.DirectionGenerator;
-import live.videosdk.android.hlsdemo.common.ZeroGravityAnimation;
-import live.videosdk.android.hlsdemo.common.listener.ResponseListener;
-import live.videosdk.android.hlsdemo.speakerMode.fragment.SpeakerFragment;
+import live.videosdk.android.hlsdemo.common.reactions.DirectionGenerator;
+import live.videosdk.android.hlsdemo.common.reactions.ZeroGravityAnimation;
+import live.videosdk.android.hlsdemo.common.utils.ResponseListener;
+import live.videosdk.android.hlsdemo.speakerMode.manageTabs.SpeakerFragment;
 import live.videosdk.rtc.android.Meeting;
 import live.videosdk.rtc.android.Participant;
 import live.videosdk.rtc.android.lib.JsonUtils;

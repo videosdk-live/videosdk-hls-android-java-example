@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.common.activity;
+package live.videosdk.android.hlsdemo.common.meeting.activity;
 
 
 import androidx.appcompat.app.AlertDialog;
@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 import live.videosdk.android.hlsdemo.R;
-import live.videosdk.android.hlsdemo.speakerMode.fragment.SpeakerFragment;
+import live.videosdk.android.hlsdemo.speakerMode.manageTabs.SpeakerFragment;
 import live.videosdk.android.hlsdemo.viewerMode.ViewerFragment;
 import live.videosdk.rtc.android.CustomStreamTrack;
 import live.videosdk.rtc.android.Meeting;

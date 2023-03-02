@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.common.listener;
+package live.videosdk.android.hlsdemo.common.utils;
 
 public interface ResponseListener<T> {
 

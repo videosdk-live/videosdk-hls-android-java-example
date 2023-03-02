@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.common.activity;
+package live.videosdk.android.hlsdemo.common.meeting.activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import live.videosdk.android.hlsdemo.R;
-import live.videosdk.android.hlsdemo.common.fragment.CreateOrJoinFragment;
+import live.videosdk.android.hlsdemo.common.meeting.fragment.CreateOrJoinFragment;
 import live.videosdk.rtc.android.VideoView;
 import live.videosdk.rtc.android.lib.PeerConnectionUtils;
 

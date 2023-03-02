@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.common.fragment;
+package live.videosdk.android.hlsdemo.common.meeting.fragment;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -12,12 +12,10 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
-import com.google.android.material.snackbar.Snackbar;
-
-import live.videosdk.android.hlsdemo.common.activity.CreateOrJoinActivity;
-import live.videosdk.android.hlsdemo.common.NetworkUtils;
+import live.videosdk.android.hlsdemo.common.meeting.activity.CreateOrJoinActivity;
+import live.videosdk.android.hlsdemo.common.utils.NetworkUtils;
 import live.videosdk.android.hlsdemo.R;
-import live.videosdk.android.hlsdemo.common.listener.ResponseListener;
+import live.videosdk.android.hlsdemo.common.utils.ResponseListener;
 
 public class CreateOrJoinFragment extends Fragment {
 

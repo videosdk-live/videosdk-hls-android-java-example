@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
-        android:name=".common.MainApplication"
+        android:name=".common.utils.MainApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -22,7 +22,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".common.activity.CreateOrJoinActivity"
+            android:name=".common.meeting.activity.CreateOrJoinActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <meta-data
@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".common.activity.MainActivity"
+            android:name=".common.meeting.activity.MainActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.app.lib_name"

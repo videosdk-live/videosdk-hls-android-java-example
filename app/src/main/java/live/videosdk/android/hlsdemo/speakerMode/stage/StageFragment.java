@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.speakerMode.fragment;
+package live.videosdk.android.hlsdemo.speakerMode.stage;
 
 import android.app.Activity;
 import android.content.Context;
@@ -53,14 +53,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import live.videosdk.android.hlsdemo.common.activity.CreateOrJoinActivity;
-import live.videosdk.android.hlsdemo.common.activity.MainActivity;
-import live.videosdk.android.hlsdemo.common.NetworkUtils;
+import live.videosdk.android.hlsdemo.common.meeting.activity.CreateOrJoinActivity;
+import live.videosdk.android.hlsdemo.common.meeting.activity.MainActivity;
+import live.videosdk.android.hlsdemo.common.utils.NetworkUtils;
 import live.videosdk.android.hlsdemo.R;
 import live.videosdk.android.hlsdemo.viewerMode.ViewerFragment;
-import live.videosdk.android.hlsdemo.common.listener.ResponseListener;
-import live.videosdk.android.hlsdemo.common.DirectionGenerator;
-import live.videosdk.android.hlsdemo.common.ZeroGravityAnimation;
+import live.videosdk.android.hlsdemo.common.utils.ResponseListener;
+import live.videosdk.android.hlsdemo.common.reactions.DirectionGenerator;
+import live.videosdk.android.hlsdemo.common.reactions.ZeroGravityAnimation;
 import live.videosdk.rtc.android.CustomStreamTrack;
 import live.videosdk.rtc.android.Meeting;
 import live.videosdk.rtc.android.Participant;

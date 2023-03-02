@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.common.fragment;
+package live.videosdk.android.hlsdemo.common.meeting.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;
@@ -20,8 +20,8 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
-import live.videosdk.android.hlsdemo.common.activity.CreateOrJoinActivity;
-import live.videosdk.android.hlsdemo.common.activity.MainActivity;
+import live.videosdk.android.hlsdemo.common.meeting.activity.CreateOrJoinActivity;
+import live.videosdk.android.hlsdemo.common.meeting.activity.MainActivity;
 import live.videosdk.android.hlsdemo.R;
 
 public class CreateMeetingFragment extends Fragment {

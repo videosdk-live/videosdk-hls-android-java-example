@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.common.fragment;
+package live.videosdk.android.hlsdemo.common.meeting.fragment;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -12,11 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.RequiresApi;
-import live.videosdk.android.hlsdemo.common.activity.CreateOrJoinActivity;
-import live.videosdk.android.hlsdemo.common.activity.MainActivity;
-import live.videosdk.android.hlsdemo.common.NetworkUtils;
+import live.videosdk.android.hlsdemo.common.meeting.activity.CreateOrJoinActivity;
+import live.videosdk.android.hlsdemo.common.meeting.activity.MainActivity;
+import live.videosdk.android.hlsdemo.common.utils.NetworkUtils;
 import live.videosdk.android.hlsdemo.R;
-import live.videosdk.android.hlsdemo.common.listener.ResponseListener;
+import live.videosdk.android.hlsdemo.common.utils.ResponseListener;
 
 public class JoinMeetingFragment extends Fragment {
 

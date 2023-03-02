@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.speakerMode.fragment;
+package live.videosdk.android.hlsdemo.speakerMode.participantLIst;
 
 import android.app.Activity;
 import android.content.Context;
@@ -16,9 +16,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import live.videosdk.android.hlsdemo.common.activity.MainActivity;
+import live.videosdk.android.hlsdemo.common.meeting.activity.MainActivity;
 import live.videosdk.android.hlsdemo.R;
-import live.videosdk.android.hlsdemo.speakerMode.adapter.ParticipantListAdapter;
+import live.videosdk.android.hlsdemo.speakerMode.participantLIst.ParticipantListAdapter;
 import live.videosdk.rtc.android.Meeting;
 import live.videosdk.rtc.android.Participant;
 

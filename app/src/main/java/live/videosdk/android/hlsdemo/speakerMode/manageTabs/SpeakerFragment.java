@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.speakerMode.fragment;
+package live.videosdk.android.hlsdemo.speakerMode.manageTabs;
 
 import android.annotation.SuppressLint;
 import android.content.ClipData;
@@ -25,8 +25,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import live.videosdk.android.hlsdemo.R;
-import live.videosdk.android.hlsdemo.common.activity.MainActivity;
-import live.videosdk.android.hlsdemo.speakerMode.adapter.TabAdapter;
+import live.videosdk.android.hlsdemo.common.meeting.activity.MainActivity;
 
 public class SpeakerFragment extends Fragment {
 

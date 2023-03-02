@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.common;
+package live.videosdk.android.hlsdemo.common.utils;
 
 import android.app.Application;
 

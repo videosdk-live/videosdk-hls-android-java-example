@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.speakerMode.adapter;
+package live.videosdk.android.hlsdemo.speakerMode.manageTabs;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import live.videosdk.android.hlsdemo.speakerMode.fragment.ParticipantListFragment;
-import live.videosdk.android.hlsdemo.speakerMode.fragment.StageFragment;
+import live.videosdk.android.hlsdemo.speakerMode.participantLIst.ParticipantListFragment;
+import live.videosdk.android.hlsdemo.speakerMode.stage.StageFragment;
 
 public class TabAdapter extends FragmentStateAdapter {
 

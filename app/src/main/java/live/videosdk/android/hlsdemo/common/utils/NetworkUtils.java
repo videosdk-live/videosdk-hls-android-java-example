@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.common;
+package live.videosdk.android.hlsdemo.common.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -13,7 +13,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import live.videosdk.android.hlsdemo.BuildConfig;
-import live.videosdk.android.hlsdemo.common.listener.ResponseListener;
 
 
 public class NetworkUtils {

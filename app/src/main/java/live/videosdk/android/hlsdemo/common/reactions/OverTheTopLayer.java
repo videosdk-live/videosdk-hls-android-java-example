@@ -1,9 +1,7 @@
-package live.videosdk.android.hlsdemo.common;
+package live.videosdk.android.hlsdemo.common.reactions;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;

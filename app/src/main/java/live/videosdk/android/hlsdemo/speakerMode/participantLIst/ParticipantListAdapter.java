@@ -1,4 +1,4 @@
-package live.videosdk.android.hlsdemo.speakerMode.adapter;
+package live.videosdk.android.hlsdemo.speakerMode.participantLIst;
 
 import android.content.Context;
 import android.os.Build;
