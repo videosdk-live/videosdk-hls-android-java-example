@@ -344,8 +344,26 @@ We have 3 packages :
 
 ### [common package](app/src/main/java/live/videosdk/android/hlsdemo/common)
 
+
+```
+common
+└── meeting
+└── reactions
+```
+
 **1. Create or Join Meeting**
-- [`NetworkUtils.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/NetworkUtils.java) - This class is used to call the api to generate token,create and validate the meeting.
+
+```
+common
+└── meeting
+    └── activity
+      └── CreateOrJoinActivity.java
+      └── MainActivity.java
+    └── fragment
+      └── CreateOrJoinFragment.java
+      └── CreateMeetingFragment.java
+      └── JoinMeetingFragment.java
+```
 
 - [`CreateOrJoinActivity.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/activity/CreateOrJoinActivity.java) and [`activity_create_or_join.xml`](app/src/main/res/layout/activity_create_or_join.xml)
   - This activity is used to ask permissions to the partcipant,and to initiate webcam and mic status.
@@ -377,7 +395,19 @@ We have 3 packages :
 
 **2. Live Reactions**
 
+```
+common
+└── reactions
+    └── DirectionGenerator.java
+    └── OverTheTopLayer.java
+    └── ZeroGravityAnimation.java
+```
+
 - [`DirectionGenerator.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/DirectionGenerator.java) class,[`OverTheTopLayer.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/OverTheTopLayer.java) class and [`ZeroGravityAnimation.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/ZeroGravityAnimation.java) files used to show Live Reactions.
+
+<p align="center">
+    <b>Viewer   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Host </b>
+ </p>
   <p align="center">
   <img width="300" src="assets/emoji_viewer.gif"/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -387,6 +417,18 @@ We have 3 packages :
 
 ### [speakerMode package](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode)
 
+```
+speakerMode
+   └── manageTabs
+     └── SpeakerFragment.java
+     └── TabAdapter.java
+   └── stage
+     └── StageFragment.java
+   └── participantList
+     └── ParticipantListAdapter.java
+     └── ParticipantListFragment.java
+```
+
 - [`SpeakerFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/fragment/SpeakerFragment.java) fragment is main fragment for conference (speaker) mode.
 
 **1. Stage**
@@ -395,6 +437,13 @@ We have 3 packages :
 <p align="center">
   <img width="300" src="assets/stage.gif"/>
   </p>
+
+- ***Audio & Video Settings***
+
+    - [`settings_layout.xml`](app/src/main/res/layout/settings_layout.xml) file used to show Audio & Video Settings.
+  <p align="center">
+  <img width="300" src="assets/settings.gif"/>
+  </p>
   
 **2. Participants**
 
@@ -402,18 +451,14 @@ We have 3 packages :
   <p align="center">
   <img width="300" src="assets/participants.gif"/>
   </p>
-  
-**3. Audio & Video Settings**
-
-- [`settings_layout.xml`](app/src/main/res/layout/settings_layout.xml) file used to show Audio & Video Settings.
-  <p align="center">
-  <img width="300" src="assets/settings.gif"/>
-  </p>
  
- **4. Add as a co-Host**
+ - ***Add as a co-Host***
  
- - Here, we are using `pubSub` to request a viewer to be co-host. [Click here](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/pubsub) to know more about `pubSub`.
+    - Here, we are using `pubSub` to request a viewer to be co-host. [Click here](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/pubsub) to know more about `pubSub`.
   <p align="center">
+    <b>Host   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Viewer </b>
+ </p>
+ <p align="center">
   <img width="300" src="assets/add_as_co_host_speaker.gif"/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img width="300" src="assets/add_as_co_host_viewer.gif"/>
@@ -422,6 +467,13 @@ We have 3 packages :
 <br/>
 
 ### [viewerMode package](app/src/main/java/live/videosdk/android/hlsdemo/viewerMode)
+
+```
+viewerMode
+└── ViewerFragment.java
+└── TrackSelectionDialog.java
+└── productsAdapter.java   
+```
 
 - [`ViewerFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/viewerMode/ViewerFragment.java) fragment is main fragment for viewer mode.
 
