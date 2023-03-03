@@ -278,15 +278,6 @@ meeting.disableWebcam();
 meeting.changeWebcam();
 ```
 
-## [Start/Stop Meeting Recording](https://docs.videosdk.live/android/guide/video-and-audio-calling-api-sdk/features/recording-meeting)
-```js
-// start recording
-meeting.startRecording(String webhookUrl,String awsDirPath,JSONObject config);
-
-// stop recording
-meeting.stopRecording();
-```
-
 ## [Start/Stop HLS]()
 ```js
 // start HLS
@@ -344,7 +335,6 @@ We have 3 packages :
 
 ### [common package](app/src/main/java/live/videosdk/android/hlsdemo/common)
 
-
 ```
 common
 └── meeting
@@ -365,32 +355,32 @@ common
       └── JoinMeetingFragment.java
 ```
 
-- [`CreateOrJoinActivity.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/activity/CreateOrJoinActivity.java) and [`activity_create_or_join.xml`](app/src/main/res/layout/activity_create_or_join.xml)
+- [`CreateOrJoinActivity.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/meeting/activity/CreateOrJoinActivity.java) and [`activity_create_or_join.xml`](app/src/main/res/layout/activity_create_or_join.xml)
   - This activity is used to ask permissions to the partcipant,and to initiate webcam and mic status.
   - `CreateOrJoinFragment`,`CreateMeetingFragment`,`JoinMeetingFragment` will be bound to this activity.
   
-- [`CreateOrJoinFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/fragment/CreateOrJoinFragment.java) and [`fragment_create_or_join.xml`](app/src/main/res/layout/fragment_create_or_join.xml) - This fragment will include
+- [`CreateOrJoinFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/meeting/fragment/CreateOrJoinFragment.java) and [`fragment_create_or_join.xml`](app/src/main/res/layout/fragment_create_or_join.xml) - This fragment will include
   - `Create meeting Button` - This button will call api for create a new meeting and navigate to `CreateMeetingFragment`.
   - `Join as speaker Button` - This button will navigate to `JoinMeetingFragment`.
   - `Join as viewer Button` - This button will navigate to `JoinMeetingFragment`.
   <p align="center">
   <img width="300" src="assets/create_or_join.jpg"/>
   </p>
-- [`CreateMeetingFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/fragment/CreateMeetingFragment.java) and [`fragment_create_meeting.xml`](app/src/main/res/layout/fragment_create_meeting.xml) -  This fragement will include
+- [`CreateMeetingFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/meeting/fragment/CreateMeetingFragment.java) and [`fragment_create_meeting.xml`](app/src/main/res/layout/fragment_create_meeting.xml) -  This fragement will include
   - `TextView for MeetingId` - This textView will contain meeting Id.
   - `EditText for ParticipantName` - This edit text will contain name of the participant.
   - `Create Meeting Button` - This button will navigate to `MainActivity`.
   <p align="center">
   <img width="300" src="assets/create_meeting.gif"/>
   </p>
-- [`JoinMeetingFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/fragment/JoinMeetingFragment.java) and [`fragment_join_meeting.xml`](app/src/main/res/layout/fragment_join_meeting.xml) - This fragement will include
+- [`JoinMeetingFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/meeting/fragment/JoinMeetingFragment.java) and [`fragment_join_meeting.xml`](app/src/main/res/layout/fragment_join_meeting.xml) - This fragement will include
   - `EditText for MeetingId` - This edit text will contain the meeting Id that you want to join.
   - `EditText for ParticipantName` - This edit text will contain name of the participant.
   - `Join Meeting Button` - This button will call api for join meeting with meetingId that you provided and navigate to `MainActivity`.
   <p align="center">
   <img width="300" src="assets/join_meeting.gif"/>
   </p>
- - [`MainActivity.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/activity/MainActivity.java) - This activity is used to initialize the meeting and navigate to `MainFragemnt` or `ViewerFragment` according to user choice.
+ - [`MainActivity.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/meeting/activity/MainActivity.java) - This activity is used to initialize the meeting and navigate to `MainFragemnt` or `ViewerFragment` according to user choice.
 
 
 **2. Live Reactions**
@@ -403,7 +393,7 @@ common
     └── ZeroGravityAnimation.java
 ```
 
-- [`DirectionGenerator.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/DirectionGenerator.java) class,[`OverTheTopLayer.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/OverTheTopLayer.java) class and [`ZeroGravityAnimation.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/ZeroGravityAnimation.java) files used to show Live Reactions.
+- [`DirectionGenerator.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/reactions/DirectionGenerator.java) class,[`OverTheTopLayer.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/reactions/OverTheTopLayer.java) class and [`ZeroGravityAnimation.java`](app/src/main/java/live/videosdk/android/hlsdemo/common/reactions/ZeroGravityAnimation.java) files used to show Live Reactions.
 
 <p align="center">
     <b>Viewer   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Host </b>
@@ -428,12 +418,17 @@ speakerMode
      └── ParticipantListAdapter.java
      └── ParticipantListFragment.java
 ```
+**1. Manage Tabs**
 
-- [`SpeakerFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/fragment/SpeakerFragment.java) fragment is main fragment for conference (speaker) mode.
+- [`SpeakerFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/manageTabs/SpeakerFragment.java) & [`TabAdapter.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/manageTabs/TabAdapter.java) files used to manage tabs.
 
-**1. Stage**
+<p align="center">
+  <img width="300" src="assets/Tabs.png"/>
+</p>
 
-- [`StageFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/fragment/StageFragment.java) fragment is stage for speaker where he/she controlls meeting.
+**2. Stage**
+
+- [`StageFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/stage/StageFragment.java) fragment is stage for speaker where he/she controlls meeting.
 <p align="center">
   <img width="300" src="assets/stage.gif"/>
   </p>
@@ -445,9 +440,9 @@ speakerMode
   <img width="300" src="assets/settings.gif"/>
   </p>
   
-**2. Participants**
+**3. Participants**
 
-- [`ParticipantListAdapter.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/adapter/ParticipantListAdapter.java),[`ParticipantListFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/fragment/ParticipantListFragment.java),[`fragment_participant.xml`](app/src/main/res/layout/fragment_participant.xml) and [`item_participant_list_layout.xml`](app/src/main/res/layout/item_participant_list_layout.xml) files used to show Participants.
+- [`ParticipantListAdapter.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/participantLIst/ParticipantListAdapter.java),[`ParticipantListFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/speakerMode/participantLIst/ParticipantListFragment.java),[`fragment_participant.xml`](app/src/main/res/layout/fragment_participant.xml) and [`item_participant_list_layout.xml`](app/src/main/res/layout/item_participant_list_layout.xml) files used to show Participants.
   <p align="center">
   <img width="300" src="assets/participants.gif"/>
   </p>
@@ -475,16 +470,22 @@ viewerMode
 └── productsAdapter.java   
 ```
 
+**1. ViewerFragment**
+
 - [`ViewerFragment.java`](app/src/main/java/live/videosdk/android/hlsdemo/viewerMode/ViewerFragment.java) fragment is main fragment for viewer mode.
 
-**1. TrackSelectionDialog**
+<p align="center">
+  <img width="300" src="assets/viewer.gif"/>
+  </p>
+
+**2. TrackSelectionDialog**
 
 - [`TrackSelectionDialog.java`](app/src/main/java/live/videosdk/android/hlsdemo/viewerMode/TrackSelectionDialog.java),[`track_selection_dialog.xml`](app/src/main/res/layout/track_selection_dialog.xml) files used to set quality of media (video).
   <p align="center">
   <img width="300" src="assets/quality.gif"/>
   </p>
   
-**2. AddToCart**
+**3. AddToCart**
 
 - [`ProductsAdapter.java`](app/src/main/java/live/videosdk/android/hlsdemo/viewerMode/ProductsAdapter.java),[`products_layout.xml`](app/src/main/res/layout/products_layout.xml),[`item_products.xml`](app/src/main/res/layout/item_products.xml) file used to show list of products.
 - Its is optional to show,useful for E-commerce app.
