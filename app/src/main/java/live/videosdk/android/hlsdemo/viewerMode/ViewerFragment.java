@@ -310,7 +310,7 @@ public class ViewerFragment extends Fragment implements View.OnClickListener, St
         public void onHlsStateChanged(JSONObject HlsState) {
             if (HlsState.has("status")) {
                 try {
-                    if (HlsState.getString("status").equals("HLS_STARTED") && HlsState.has("downstreamUrl")) {
+                    if (HlsState.getString("status").equals("HLS_PLAYABLE") && HlsState.has("downstreamUrl")) {
 
                         downStreamUrl = HlsState.getString("downstreamUrl");
                         initializePlayer();
@@ -511,12 +511,6 @@ public class ViewerFragment extends Fragment implements View.OnClickListener, St
 
         @Override
         public void onPlayerError(PlaybackException error) {
-
-            if (error.errorCode == PlaybackException.ERROR_CODE_IO_BAD_HTTP_STATUS) {
-                releasePlayer();
-                clearStartPosition();
-                initializePlayer();
-            }
             if (error.errorCode == PlaybackException.ERROR_CODE_BEHIND_LIVE_WINDOW) {
                 player.seekToDefaultPosition();
                 player.prepare();
