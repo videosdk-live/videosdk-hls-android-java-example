@@ -955,7 +955,7 @@ public class StageFragment extends Fragment {
             if (webcamEnabled) {
                 meeting.disableWebcam();
             } else {
-                CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", facingMode, CustomStreamTrack.VideoMode.DETAIL, mContext);
+                CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", facingMode, CustomStreamTrack.VideoMode.DETAIL, true, mContext);
                 meeting.enableWebcam(videoCustomTrack);
             }
         });

@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         Map<String, CustomStreamTrack> customTracks = new HashMap<>();
         facingMode="front";
 
-        CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", facingMode, CustomStreamTrack.VideoMode.TEXT, this);
+        CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", facingMode, CustomStreamTrack.VideoMode.TEXT, true,this);
         customTracks.put("video", videoCustomTrack);
 
         CustomStreamTrack audioCustomTrack = VideoSDK.createAudioTrack("high_quality", this);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         // create a new meeting instance
         meeting = VideoSDK.initMeeting(MainActivity.this, meetingId, localParticipantName,
-                micEnabled, webcamEnabled, null, mode, customTracks
+                micEnabled, webcamEnabled, null, mode, true,customTracks
         );
 
         meeting.addEventListener(new MeetingEventListener() {
