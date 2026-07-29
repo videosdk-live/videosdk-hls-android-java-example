@@ -937,7 +937,7 @@ public class StageFragment extends Fragment {
             return;
         }
 
-        meeting.enableScreenShare(data);
+        meeting.enableScreenShare(data, true);
     }
 
     private void setActionListeners() {
@@ -955,7 +955,7 @@ public class StageFragment extends Fragment {
             if (webcamEnabled) {
                 meeting.disableWebcam();
             } else {
-                CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", facingMode, CustomStreamTrack.VideoMode.DETAIL, true, mContext);
+                CustomStreamTrack videoCustomTrack = VideoSDK.createCameraVideoTrack("h720p_w960p", facingMode, CustomStreamTrack.VideoMode.DETAIL, true, mContext, VideoSDK.getSelectedVideoDevice());
                 meeting.enableWebcam(videoCustomTrack);
             }
         });
@@ -964,7 +964,7 @@ public class StageFragment extends Fragment {
             if (recordingEnabled)
                 stopRecordingConfirmDialog();
             else {
-                meeting.startRecording(null, null, null);
+                meeting.startRecording(null, null, null, null);
             }
 
         });
@@ -991,7 +991,7 @@ public class StageFragment extends Fragment {
                     JsonUtils.jsonPut(config, "layout", layout);
                     JsonUtils.jsonPut(config, "orientation", "portrait");
                     JsonUtils.jsonPut(config, "theme", "DARK");
-                    meeting.startHls(config);
+                    meeting.startHls(config, null);
                 } else {
                     meeting.stopHls();
                 }

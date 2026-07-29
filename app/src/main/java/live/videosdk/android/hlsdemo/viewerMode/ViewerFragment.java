@@ -204,13 +204,16 @@ public class ViewerFragment
       // notify user of any new emoji
       meeting.pubSub.subscribe("emoji", emojiListener);
       coHostListener =
-        pubSubMessage -> {
+        new PubSubMessageListener() {
+          @Override
+          public void onMessageReceived(PubSubMessage pubSubMessage) {
           if (
             pubSubMessage
               .getMessage()
               .equals(meeting.getLocalParticipant().getId())
           ) {
             showCoHostRequestDialog(pubSubMessage.getSenderName());
+          }
           }
         };
       // notify user of any new emoji
